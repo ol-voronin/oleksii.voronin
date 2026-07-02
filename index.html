@@ -31,7 +31,7 @@
   .brand b{ color:var(--accent); }
   .nav-links{ display:flex; gap:30px; }
   .nav-links a{ color:#CBD6E2; font-size:14px; font-weight:500; transition:color .2s; }
-  .nav-links a:hover{ color:var(--accent); }
+  .nav-links a:hover, .nav-links a.on{ color:var(--accent); }
   .nav-cta{ background:var(--accent); color:var(--ink)!important; padding:9px 18px; border-radius:30px; font-weight:600; font-size:13px; transition:transform .2s,background .2s; }
   .nav-cta:hover{ background:var(--accent-soft); transform:translateY(-1px); }
   @media(max-width:760px){ .nav-links{ display:none; } }
@@ -158,14 +158,15 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand">Oleksii <b>Voronin</b></div>
+    <a class="brand" href="index.html">Oleksii <b>Voronin</b></a>
     <div class="nav-links">
-      <a href="#about">About</a>
+      <a class="on" href="index.html">Home</a>
+      <a href="index.html#about">About</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#experience">Experience</a>
-      <a href="#work">Clients</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html#expertise">Expertise</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#work">Clients</a>
+      <a href="index.html#contact">Contact</a>
     </div>
     <a class="nav-cta" href="mailto:dev.voronin@gmail.com?subject=Design%20opportunity%20—%20from%20your%20website&body=Hi%20Oleksii%2C%0A%0A">Get in touch</a>
   </div>
