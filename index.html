@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oleksii Voronin — Experience Design Leader</title>
+<meta name="description" content="Oleksii Voronin — Experience Design Manager & Lead UX/UI Designer with 12+ years across enterprise, AI, and customer-facing products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16263B; --ink-2:#1E3147; --ink-3:#27405A;
+    --accent:#D99A4E; --accent-deep:#B97F38; --accent-soft:#F2D9B5;
+    --text:#222A35; --muted:#5C6675; --soft:#7C8796;
+    --line:#E7EAEE; --bg:#FBFAF8; --card:#FFFFFF;
+    --side-muted:#9FB2C6;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:'Inter',system-ui,sans-serif; color:var(--text); background:var(--bg); line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,.display{ font-family:'Fraunces',Georgia,serif; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ width:min(1120px,92vw); margin:0 auto; }
+  .accent{ color:var(--accent); }
+
+  /* ---------- NAV ---------- */
+  nav{ position:sticky; top:0; z-index:50; background:rgba(22,38,59,.92); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.08); }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .brand{ font-family:'Fraunces',serif; font-weight:600; color:#fff; font-size:18px; letter-spacing:.3px; }
+  .brand b{ color:var(--accent); }
+  .nav-links{ display:flex; gap:30px; }
+  .nav-links a{ color:#CBD6E2; font-size:14px; font-weight:500; transition:color .2s; }
+  .nav-links a:hover{ color:var(--accent); }
+  .nav-cta{ background:var(--accent); color:var(--ink)!important; padding:9px 18px; border-radius:30px; font-weight:600; font-size:13px; transition:transform .2s,background .2s; }
+  .nav-cta:hover{ background:var(--accent-soft); transform:translateY(-1px); }
+  @media(max-width:760px){ .nav-links{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{ position:relative; color:#fff; overflow:hidden;
+    background:radial-gradient(120% 120% at 80% -10%, var(--ink-3) 0%, var(--ink-2) 38%, var(--ink) 78%); }
+  .hero::after{ content:''; position:absolute; right:-120px; top:-120px; width:520px; height:520px; border-radius:50%;
+    background:radial-gradient(circle, rgba(217,154,78,.20), transparent 62%); pointer-events:none; }
+  .hero .wrap{ padding:96px 0 84px; position:relative; z-index:2; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:9px; color:var(--accent); font-size:13px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:22px; }
+  .eyebrow::before{ content:''; width:28px; height:2px; background:var(--accent); }
+  .hero h1{ font-weight:600; font-size:clamp(40px,6.4vw,72px); line-height:1.02; letter-spacing:.5px; }
+  .hero h1 .l2{ color:var(--accent); }
+  .hero .lead{ margin-top:22px; max-width:640px; font-size:clamp(16px,2vw,19px); color:#D5DEE8; font-weight:400; }
+  .hero .role-line{ margin-top:14px; font-size:15px; color:var(--side-muted); font-weight:500; letter-spacing:.4px; }
+  .hero-cta{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{ display:inline-flex; align-items:center; gap:9px; padding:13px 24px; border-radius:32px; font-weight:600; font-size:14px; transition:transform .2s,background .2s,border-color .2s; }
+  .btn-primary{ background:var(--accent); color:var(--ink); }
+  .btn-primary:hover{ background:var(--accent-soft); transform:translateY(-2px); }
+  .btn-ghost{ border:1.5px solid rgba(255,255,255,.28); color:#fff; }
+  .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+
+  .stats{ margin-top:64px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; max-width:760px; }
+  .stat{ border-left:2px solid var(--accent); padding-left:16px; }
+  .stat .n{ font-family:'Fraunces',serif; font-weight:600; font-size:30px; color:#fff; line-height:1; }
+  .stat .t{ font-size:12.5px; color:var(--side-muted); margin-top:7px; letter-spacing:.3px; }
+  @media(max-width:680px){ .stats{ grid-template-columns:repeat(2,1fr); gap:26px 14px; } }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:84px 0; }
+  .sec-head{ margin-bottom:46px; max-width:720px; }
+  .kicker{ display:inline-block; color:var(--accent-deep); font-size:12.5px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:14px; }
+  .sec-head h2{ font-size:clamp(28px,4vw,40px); font-weight:600; color:var(--ink); line-height:1.1; }
+  .sec-head p{ margin-top:16px; color:var(--muted); font-size:16.5px; }
+
+  /* ABOUT */
+  .about-grid{ display:grid; grid-template-columns:1.55fr 1fr; gap:54px; align-items:start; }
+  @media(max-width:860px){ .about-grid{ grid-template-columns:1fr; gap:40px; } }
+  .about-body p{ color:#3A4452; font-size:16px; margin-bottom:18px; }
+  .about-body p:first-child::first-letter{ font-family:'Fraunces',serif; font-weight:600; font-size:60px; float:left; line-height:.82; padding:6px 12px 0 0; color:var(--accent-deep); }
+  .pillars{ background:var(--ink); border-radius:18px; padding:34px 30px; color:#fff; position:sticky; top:88px; }
+  .pillars h3{ font-size:18px; font-weight:600; margin-bottom:8px; }
+  .pillars .ps{ color:var(--side-muted); font-size:13.5px; margin-bottom:22px; }
+  .pill{ display:flex; gap:13px; padding:13px 0; border-top:1px solid var(--ink-3); }
+  .pill .ic{ flex:0 0 34px; height:34px; border-radius:9px; background:rgba(217,154,78,.16); color:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; }
+  .pill .pt{ font-weight:600; font-size:14.5px; }
+  .pill .pd{ color:var(--side-muted); font-size:12.5px; line-height:1.45; }
+
+  /* EXPERTISE */
+  .exp-wrap{ background:#fff; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  @media(max-width:860px){ .grid3{ grid-template-columns:1fr; } }
+  .ecard{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:26px 24px; transition:transform .22s,box-shadow .22s,border-color .22s; }
+  .ecard:hover{ transform:translateY(-4px); box-shadow:0 18px 40px -22px rgba(22,38,59,.35); border-color:var(--accent-soft); }
+  .ecard .num{ font-family:'Fraunces',serif; color:var(--accent); font-size:15px; font-weight:600; }
+  .ecard h3{ font-family:'Inter',sans-serif; font-size:17px; font-weight:600; color:var(--ink); margin:10px 0 8px; }
+  .ecard p{ color:var(--muted); font-size:14px; }
+
+  /* EXPERIENCE TIMELINE */
+  .tl{ position:relative; margin-left:8px; }
+  .tl::before{ content:''; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--accent),var(--line)); }
+  .titem{ position:relative; padding:0 0 38px 40px; }
+  .titem::before{ content:''; position:absolute; left:0; top:5px; width:16px; height:16px; border-radius:50%; background:#fff; border:3px solid var(--accent); }
+  .titem:last-child{ padding-bottom:4px; }
+  .t-top{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:baseline; }
+  .t-role{ font-size:19px; font-weight:600; color:var(--ink); font-family:'Inter',sans-serif; }
+  .t-date{ font-size:13px; color:var(--muted); font-weight:600; white-space:nowrap; }
+  .t-org{ color:var(--accent-deep); font-weight:600; font-size:14.5px; margin:3px 0 12px; }
+  .t-list{ list-style:none; }
+  .t-list li{ position:relative; padding-left:18px; margin-bottom:8px; color:#3A4452; font-size:14.5px; }
+  .t-list li::before{ content:''; position:absolute; left:0; top:8px; width:6px; height:6px; background:var(--accent); border-radius:1.5px; transform:rotate(45deg); }
+  .t-list li b{ color:var(--ink); font-weight:600; }
+
+  /* ENGAGEMENTS */
+  .eng-wrap{ background:var(--ink); color:#fff; }
+  .eng-wrap .kicker{ color:var(--accent); }
+  .eng-wrap .sec-head h2{ color:#fff; }
+  .eng-wrap .sec-head p{ color:var(--side-muted); }
+  .grid2{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  @media(max-width:760px){ .grid2{ grid-template-columns:1fr; } }
+  .gcard{ background:rgba(255,255,255,.04); border:1px solid var(--ink-3); border-radius:14px; padding:24px; transition:background .22s,transform .22s,border-color .22s; }
+  .gcard:hover{ background:rgba(217,154,78,.08); border-color:var(--accent); transform:translateY(-3px); }
+  .gcard .cli{ font-size:16.5px; font-weight:600; color:#fff; }
+  .gcard .cli .via{ color:var(--side-muted); font-weight:500; font-size:13px; }
+  .gcard p{ color:#C4D0DD; font-size:13.8px; margin-top:8px; }
+
+  /* SKILLS / INDUSTRIES split */
+  .split{ display:grid; grid-template-columns:1fr 1fr; gap:54px; }
+  @media(max-width:860px){ .split{ grid-template-columns:1fr; gap:40px; } }
+  .mini-h{ font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--ink); margin-bottom:18px; padding-bottom:10px; border-bottom:2px solid var(--ink); }
+  .chips{ display:flex; flex-wrap:wrap; gap:9px; }
+  .c{ border:1px solid var(--line); background:#fff; color:#33414F; font-size:13.5px; font-weight:500; padding:7px 14px; border-radius:30px; transition:border-color .2s,color .2s; }
+  .c:hover{ border-color:var(--accent); color:var(--accent-deep); }
+  .ind-list{ display:grid; gap:12px; }
+  .ind{ display:flex; align-items:center; gap:13px; font-size:15px; color:#2C3744; font-weight:500; padding:11px 16px; background:#fff; border:1px solid var(--line); border-radius:11px; }
+  .ind .dot{ width:9px; height:9px; border-radius:50%; background:var(--accent); flex:none; }
+
+  /* FACTS strip (edu/lang/cert) */
+  .facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:46px; }
+  @media(max-width:760px){ .facts{ grid-template-columns:1fr; } }
+  .fact{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; }
+  .fact .fh{ color:var(--accent-deep); font-size:11.5px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; }
+  .fact .fm{ font-weight:600; color:var(--ink); font-size:15.5px; }
+  .fact .fs{ color:var(--muted); font-size:13.5px; margin-top:5px; }
+
+  /* CONTACT */
+  .contact{ background:radial-gradient(120% 130% at 15% 0%, var(--ink-3), var(--ink-2) 45%, var(--ink)); color:#fff; text-align:center; }
+  .contact h2{ font-size:clamp(30px,4.5vw,46px); font-weight:600; }
+  .contact p{ color:#CBD6E2; max-width:520px; margin:18px auto 32px; font-size:16.5px; }
+  .contact-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:28px; }
+  .pill-link{ display:inline-flex; align-items:center; gap:10px; border:1.5px solid var(--ink-3); border-radius:32px; padding:12px 22px; font-size:14.5px; color:#E7EEF5; font-weight:500; transition:border-color .2s,background .2s; }
+  .pill-link:hover{ border-color:var(--accent); background:rgba(217,154,78,.1); }
+  .pill-link b{ color:var(--accent); font-weight:600; }
+  footer{ text-align:center; color:var(--soft); font-size:13px; padding:30px 0; background:var(--ink); border-top:1px solid var(--ink-3); }
+  footer .accent{ color:var(--accent); }
+
+  /* reveal animation */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease,transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Oleksii <b>Voronin</b></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Clients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Experience Design Leader</div>
+    <h1>Oleksii Voronin<br><span class="l2">Designing clarity into complexity.</span></h1>
+    <p class="lead">I lead design teams and product strategy for enterprise, AI-powered, and customer-facing platforms — turning complex business challenges into scalable, human-centered experiences.</p>
+    <div class="role-line">Experience Design Manager · Lead UX/UI Designer · Design Strategist</div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#contact">Let's work together →</a>
+      <a class="btn btn-ghost" href="Oleksii_Voronin_CV.pdf" download>Download CV</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">12+</div><div class="t">Years in design &amp; UX</div></div>
+      <div class="stat"><div class="n">6</div><div class="t">Designers led &amp; mentored</div></div>
+      <div class="stat"><div class="n">7+</div><div class="t">Industries delivered in</div></div>
+      <div class="stat"><div class="n">40+</div><div class="t">Cross-functional team scale</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="sec-head reveal">
+          <span class="kicker">About</span>
+          <h2>A design leader who builds teams, strategy, and products in equal measure.</h2>
+        </div>
+        <div class="about-body reveal">
+          <p>Over more than twelve years, I've moved fluidly between the drawing board and the leadership table — shaping enterprise platforms, AI-powered solutions, and customer-facing products for some of the world's most recognized organizations. My work sits where business strategy, user needs, and technical reality meet, and my job is to make that intersection feel effortless for the people who use what we build.</p>
+          <p>Today, as an Experience Design Manager at EPAM Systems, I lead UX strategy across global engagements while directly managing, mentoring, and growing a team of six designers spanning Middle to Lead levels. I care as much about the careers of the people I lead as I do about the experiences we ship — setting design direction, planning capacity, running reviews, and creating the conditions for designers to do their best work.</p>
+          <p>I've led discovery and strategy for healthcare ecosystems with Johnson &amp; Johnson, Janssen, and Sandoz; defined immersive, AI-driven experiences showcased at Google Cloud Next; modernized data-heavy operational platforms for energy leaders like Halliburton, Schlumberger, and Kongsberg; and designed financial and marketplace products for Paxful, AWS/Omantel, and Interswitch. Across all of it, the constant is a human-centered approach grounded in research, design thinking, and measurable outcomes.</p>
+          <p>I'm equally comfortable facilitating an executive pre-sales workshop, defining an information architecture for a regulated multi-market platform, or pairing with engineers to protect design quality in delivery. Whatever the engagement, my aim is the same: clarity, usability, and real business value.</p>
+        </div>
+      </div>
+      <aside class="pillars reveal">
+        <h3>How I work</h3>
+        <div class="ps">Four principles that show up in every engagement.</div>
+        <div class="pill"><div class="ic">01</div><div><div class="pt">Lead with people</div><div class="pd">Grow designers, align stakeholders, and build healthy, high-performing teams.</div></div></div>
+        <div class="pill"><div class="ic">02</div><div><div class="pt">Strategy before pixels</div><div class="pd">Frame the problem, the vision, and the value before a single screen is drawn.</div></div></div>
+        <div class="pill"><div class="ic">03</div><div><div class="pt">Research-driven craft</div><div class="pd">Decisions earned through discovery, testing, and evidence — not opinion.</div></div></div>
+        <div class="pill"><div class="ic">04</div><div><div class="pt">Scale through systems</div><div class="pd">Design systems and DesignOps that keep quality consistent across markets.</div></div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" class="exp-wrap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Expertise</span>
+      <h2>What I bring to the table</h2>
+      <p>A blend of design leadership, strategic consulting, and hands-on UX craft — built for complex, enterprise-scale problems.</p>
+    </div>
+    <div class="grid3">
+      <div class="ecard reveal"><div class="num">01</div><h3>Design Leadership &amp; Resource Management</h3><p>Building, mentoring, and managing multidisciplinary design teams; performance, growth, and capacity planning for designers from Middle to Lead level.</p></div>
+      <div class="ecard reveal"><div class="num">02</div><h3>UX Strategy &amp; Digital Transformation</h3><p>Defining product vision, experience strategy, and roadmaps that align stakeholder priorities with measurable business outcomes.</p></div>
+      <div class="ecard reveal"><div class="num">03</div><h3>Product Discovery &amp; Facilitation</h3><p>Leading discovery sessions, stakeholder interviews, and design-thinking workshops that uncover needs and accelerate decisions.</p></div>
+      <div class="ecard reveal"><div class="num">04</div><h3>Enterprise &amp; Complex B2B UX</h3><p>Simplifying data-intensive, technical platforms into intuitive, scalable, and efficient experiences for specialist users.</p></div>
+      <div class="ecard reveal"><div class="num">05</div><h3>Human-Centered AI &amp; GenAI Design</h3><p>Shaping experiences around agentic AI, generative interfaces, and intelligent workflows that stay understandable and trustworthy.</p></div>
+      <div class="ecard reveal"><div class="num">06</div><h3>Design Systems &amp; DesignOps</h3><p>Establishing scalable patterns, governance, and operations that hold experience quality steady across products and markets.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Career</span>
+      <h2>Professional experience</h2>
+    </div>
+    <div class="tl">
+      <div class="titem reveal">
+        <div class="t-top"><div class="t-role">Experience Design Manager / Lead UX Consultant</div><div class="t-date">Oct 2023 – Present</div></div>
+        <div class="t-org">EPAM Systems</div>
+        <ul class="t-list">
+          <li><b>Resource &amp; people management</b> — lead, mentor, and manage a team of 6 designers (Middle to Lead), overseeing growth, performance, and capacity planning.</li>
+          <li>Lead UX/UI strategy and multidisciplinary teams across enterprise and AI-driven engagements for global clients.</li>
+          <li>Drive <b>pre-sales, solution discovery, and design-thinking workshops</b> that shape proposals and win new engagements.</li>
+          <li>Establish scalable design systems, UX patterns, and DesignOps practices across products and markets.</li>
+        </ul>
+      </div>
+      <div class="titem reveal">
+        <div class="t-top"><div class="t-role">Lead UX Designer / Senior UX Architect</div><div class="t-date">Aug 2021 – Oct 2023</div></div>
+        <div class="t-org">Halliburton</div>
+        <ul class="t-list">
+          <li>Led UX for enterprise engineering apps enabling <b>well construction across five global regions</b> (Saudi Arabia, Norway, Oman, Mexico, USA).</li>
+          <li>Built UX artefacts, roadmaps, and long-range plans with Product Owners; created design processes and mentored designers.</li>
+          <li>Delivered accessible, WCAG-compliant interfaces; ran heuristic audits and usability testing across teams of 40+ engineers.</li>
+        </ul>
+      </div>
+      <div class="titem reveal">
+        <div class="t-top"><div class="t-role">Senior UX Designer</div><div class="t-date">Feb 2020 – Oct 2021</div></div>
+        <div class="t-org">Paxful</div>
+        <ul class="t-list">
+          <li>Designed and tested accessible desktop &amp; mobile experiences for a leading <b>peer-to-peer crypto marketplace</b> (300+ payment methods).</li>
+          <li>Built and maintained the design system with design tokens; ran research, interviews, and usability testing.</li>
+        </ul>
+      </div>
+      <div class="titem reveal">
+        <div class="t-top"><div class="t-role">UX/UI Designer</div><div class="t-date">Feb 2019 – Mar 2020</div></div>
+        <div class="t-org">Interswitch</div>
+        <ul class="t-list">
+          <li>Delivered <b>12 banking applications across 4 African regions</b> for a leading payments platform.</li>
+          <li>Built personas, journey maps, user flows, wireframes, internal UI kits, and a shared design system.</li>
+        </ul>
+      </div>
+      <div class="titem reveal">
+        <div class="t-top"><div class="t-role">UX/UI Designer — Earlier Roles</div><div class="t-date">2018 – 2019</div></div>
+        <div class="t-org">RedCatStore · Industrial Operations Technology</div>
+        <ul class="t-list">
+          <li>Premium fashion e-commerce: research-driven wireframing, responsive UI, usability testing, and micro-interactions.</li>
+          <li>Industrial sensor-touch platform for factory robotics, electronics, and IoT — unified device &amp; process management.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS / CLIENTS -->
+<section id="work" class="eng-wrap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Selected Engagements</span>
+      <h2>Clients &amp; signature projects</h2>
+      <p>A selection of organizations and initiatives I've helped shape through design leadership and strategy.</p>
+    </div>
+    <div class="grid2">
+      <div class="gcard reveal"><div class="cli">Google Cloud Next 2026 <span class="via">· via EPAM</span></div><p>End-to-end experience &amp; interaction strategy for an immersive, gamified storytelling installation showcasing Agentic AI, Knowledge Graphs, IoT, and Google Maps Platform.</p></div>
+      <div class="gcard reveal"><div class="cli">Johnson &amp; Johnson / Janssen <span class="via">· with Google</span></div><p>Discovery and UX strategy for an integrated digital healthcare platform unifying services for healthcare professionals, patients, and internal teams.</p></div>
+      <div class="gcard reveal"><div class="cli">Sandoz <span class="via">· via EPAM</span></div><p>Information architecture, design patterns, and prototypes for a multi-market digital healthcare platform balancing usability with regulatory compliance.</p></div>
+      <div class="gcard reveal"><div class="cli">FanDuel <span class="via">· via EPAM</span></div><p>Modernized "Umbrella," an internal customer-engagement and campaign-orchestration platform built on AWS.</p></div>
+      <div class="gcard reveal"><div class="cli">Kongsberg Digital <span class="via">· via EPAM</span></div><p>UX for an industrial work surface integrating onshore planning, offshore drilling, well operations, and marine data.</p></div>
+      <div class="gcard reveal"><div class="cli">AWS / Omantel <span class="via">· via EPAM</span></div><p>UX and business strategy for a national e-commerce &amp; marketplace platform with integrated Telco services.</p></div>
+      <div class="gcard reveal"><div class="cli">Schlumberger (SLB) <span class="via">· via EPAM</span></div><p>Redesigned an external developer / API portal for the Oil &amp; Gas industry, improving developer experience and API adoption.</p></div>
+      <div class="gcard reveal"><div class="cli">Halliburton &amp; Paxful</div><p>Enterprise engineering platforms across five energy regions, and accessible desktop/mobile experiences for a global crypto marketplace.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS + INDUSTRIES -->
+<section id="skills">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <div class="mini-h">Tools &amp; Technologies</div>
+        <div class="chips">
+          <span class="c">Figma</span><span class="c">FigJam</span><span class="c">Adobe XD</span><span class="c">Illustrator</span><span class="c">Sketch</span><span class="c">Miro</span><span class="c">Maze</span><span class="c">Dovetail</span><span class="c">Hotjar</span><span class="c">Smartlook</span><span class="c">ProtoPie</span><span class="c">Azure DevOps</span><span class="c">Jira</span><span class="c">Salesforce</span><span class="c">SQL</span><span class="c">AWS</span>
+        </div>
+        <div class="mini-h" style="margin-top:38px;">Methods</div>
+        <div class="chips">
+          <span class="c">User Research</span><span class="c">Usability Testing</span><span class="c">Journey Mapping</span><span class="c">Service Blueprints</span><span class="c">Personas</span><span class="c">Information Architecture</span><span class="c">Heuristic Evaluation</span><span class="c">Accessibility (WCAG)</span><span class="c">Prototyping</span><span class="c">Workshop Facilitation</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="mini-h">Industries</div>
+        <div class="ind-list">
+          <div class="ind"><span class="dot"></span>Healthcare &amp; Life Sciences</div>
+          <div class="ind"><span class="dot"></span>Energy / Oil &amp; Gas</div>
+          <div class="ind"><span class="dot"></span>Financial Services &amp; FinTech</div>
+          <div class="ind"><span class="dot"></span>Cloud &amp; Enterprise Software</div>
+          <div class="ind"><span class="dot"></span>Retail &amp; E-commerce</div>
+          <div class="ind"><span class="dot"></span>Telecom · Crypto / Web3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="fact reveal"><div class="fh">Education</div><div class="fm">B.Sc., Micro- &amp; Nanoelectronics</div><div class="fs">Kharkiv Polytechnic Institute — Faculty of Automation &amp; Instrumentation</div></div>
+      <div class="fact reveal"><div class="fh">Certification</div><div class="fm">AI Literacy Program</div><div class="fs">EPAM Systems · 2024</div></div>
+      <div class="fact reveal"><div class="fh">Languages</div><div class="fm">Ukrainian — Native</div><div class="fs">English — Professional Working Proficiency</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker" style="color:var(--accent)">Contact</span>
+      <h2>Let's design something that matters.</h2>
+      <p>Open to design leadership roles, consulting engagements, and collaborations. Based in Kharkiv, Ukraine — working globally and remote-friendly.</p>
+      <div class="contact-row">
+        <a class="pill-link" href="tel:+380661327853"><b>Phone</b> +380 66 132 78 53</a>
+        <a class="pill-link" href="mailto:dev.voronin@gmail.com"><b>Email</b> dev.voronin@gmail.com</a>
+        <a class="pill-link" href="https://www.linkedin.com/in/oleksii-voronin-4502726b" target="_blank" rel="noopener"><b>LinkedIn</b> /in/oleksii-voronin-4502726b</a>
+      </div>
+      <a class="btn btn-primary" href="Oleksii_Voronin_CV.pdf" download>Download full CV (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Oleksii Voronin · Experience Design Leader · Crafted with <span class="accent">care</span> in Kharkiv, Ukraine</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12 });
+  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay = (i%3*0.06)+'s'; io.observe(el); });
+</script>
+</body>
+</html>
